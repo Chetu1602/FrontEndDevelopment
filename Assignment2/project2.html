@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        #top {
+            background-color: blue;
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+        }
+
+        #f {
+            padding-left: 288px;
+            font-size: 20px;
+        }
+
+        #search {
+            margin: 6px;
+
+        }
+
+        #seller {
+            padding: 7px;
+            padding-right: 21px;
+        }
+
+        .content {
+            position: absolute;
+            top: 74px;
+            left: 224px;
+        }
+
+        .price {
+            position: absolute;
+            top: 70px;
+            right: 250px;
+            font-size: 22px;
+
+        }
+
+        .items .clr span {
+            color: rgb(76, 168, 48);
+            margin: 7px;
+
+        }
+
+
+
+
+
+        .star {
+            background-color: green;
+            color: white;
+
+        }
+
+        .star {
+            display: block;
+            width: 8%;
+            margin: auto;
+            position: absolute;
+            left: -41px;
+        }
+
+        .p {
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        .sizing {
+            font-size: 8px;
+        }
+
+        .item1 .i img {
+            width: 140px;
+            height: 158px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+
+        .o,
+        .c {
+            margin: 1px;
+        }
+
+        .clr,
+        #m {
+            font-size: 10px;
+        }
+
+        #rating {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 5px;
+
+        }
+
+        .items {
+            margin: 3px;
+        }
+
+        .details ul {
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+
+        .c {
+            color: green;
+        }
+
+        /* for item2 */
+        .content2 {
+            position: absolute;
+            top: 250px;
+            left: 224px;
+        }
+
+        .price2 {
+            position: absolute;
+            top: 240px;
+            right: 250px;
+            font-size: 22px;
+
+        }
+
+        .items2 .clr2 span {
+            color: rgb(76, 168, 48);
+            margin: 7px;
+
+        }
+
+
+
+
+
+        .star2 {
+            background-color: green;
+            color: white;
+            display: block;
+            width: 8%;
+            margin: auto;
+            position: absolute;
+            left: -41px;
+
+        }
+
+
+        .p2 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        .sizing2 {
+            font-size: 8px;
+        }
+
+        .item2 .i2 img {
+            width: 140px;
+            height: 158px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+
+        .o2,
+        .c2 {
+            margin: 1px;
+        }
+
+        .clr2,
+        #m2 {
+            font-size: 10px;
+        }
+
+        #rating2 {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 5px;
+
+        }
+
+        .items2 {
+            margin: 3px;
+        }
+
+        .details2 ul {
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+
+        .c2 {
+            color: green;
+        }
+
+        /* for item3    */
+        .content3 {
+            position: absolute;
+            top: 430px;
+            left: 224px;
+        }
+
+        .price3 {
+            position: absolute;
+            top: 418px;
+            right: 250px;
+            font-size: 22px;
+
+        }
+
+        .items3 .clr3 span {
+            color: rgb(76, 168, 48);
+            margin: 7px;
+
+        }
+
+
+
+
+
+        .star3 {
+            background-color: green;
+            color: white;
+            display: block;
+            width: 8%;
+            margin: auto;
+            position: absolute;
+            left: -41px;
+
+        }
+
+
+        .p3 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        .sizing3 {
+            font-size: 8px;
+        }
+
+        .item3 .i3 img {
+            width: 140px;
+            height: 158px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+
+        .o3,
+        .c3 {
+            margin: 1px;
+        }
+
+        .clr3,
+        #m3 {
+            font-size: 10px;
+        }
+
+        #rating3 {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 5px;
+
+        }
+
+        .items3 {
+            margin: 3px;
+        }
+
+        .details3 ul {
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+
+        .c3 {
+            color: green;
+        }
+
+        .i3 {
+            margin-bottom: 20px;
+
+        }
+
+        /* for item4   */
+        .content4 {
+            position: absolute;
+            top: 578px;
+            left: 224px;
+        }
+
+        .price4 {
+            position: absolute;
+            top: 575px;
+            right: 250px;
+            font-size: 22px;
+
+        }
+
+        .items4 .clr4 span {
+            color: rgb(76, 168, 48);
+            margin: 7px;
+
+        }
+
+
+
+
+
+        .star4 {
+            background-color: green;
+            color: white;
+            display: block;
+            width: 8%;
+            margin: auto;
+            position: absolute;
+            left: -41px;
+
+        }
+
+
+        .p4 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        .sizing4 {
+            font-size: 8px;
+        }
+
+        .item4 .i4 img {
+            width: 140px;
+            height: 158px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+
+        .o4,
+        .c4 {
+            margin: 1px;
+        }
+
+        .clr4,
+        #m4 {
+            font-size: 10px;
+        }
+
+        #rating4 {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 5px;
+
+        }
+
+        .items4 {
+            margin: 3px;
+        }
+
+        .details4 ul {
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+
+        .c4 {
+            color: green;
+        }
+
+        .i4 {
+            margin-bottom: 20px;
+
+        }
+
+        .bgclr {
+            background-color: rgb(3, 3, 53);
+            font-size: 9px;
+            padding-top: 30px;
+            padding-left: 30px;
+            height: 220px;
+            width: 100%;
+        }
+
+        .tab th {
+            color: gray;
+            text-align: left;
+        }
+
+        .tab tr {
+            color: white;
+        }
+
+        td {
+            padding-top: 4px;
+
+            padding-right: 100px;
+        }
+
+        .mail {
+            border-left: 1px solid #454d5e;
+            padding: 0 25px;
+            position: relative;
+            left: 600px;
+            bottom: 138px;
+        }
+
+        .mail span {
+            color: gray;
+            position: relative;
+            left: 2px;
+
+
+        }
+
+        .mail p {
+            color: white;
+            position: relative;
+            left: 2px;
+            bottom: -5px;
+        }
+
+        .last span {
+            color: grey;
+            position: relative;
+            left: 908px;
+            bottom: 206px;
+        }
+
+        .last span {
+            color: grey;
+            position: relative;
+            left: 908px;
+            bottom: 206px;
+        }
+
+        .last p {
+            color: white;
+            position: relative;
+            left: 910px;
+            bottom: 201px;
+
+        }
+        #phone{
+            position: relative;
+            left: 954px;
+    bottom: 211px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="top">
+        <span id="f">Flipkart </span>
+        <span> <input id="search" type="search" title="Search" name="SearchBar" placeholder="Search"> </span>
+        <span id="seller"> Become a Seller</span>
+        <span id="cart">Cart</span>
+    </header>
+    <div class="item1">
+        <div class="i">
+            <img src="shopping.webp" alt="iphone">
+        </div>
+
+        <div class="content">
+            <strong class="Apple">Apple iPhone 11 (White, 128 GB)</strong>
+            <div class="sizing">
+                <p id="rating">4.7</p><span>1,81,870 Ratings & 10,713 Reviwews</span>
+
+                <div class="details">
+                    <ul>
+                        <li> 128 GB ROM </li>
+                        <li> 15.49 cm (6.1 inch) Super Retina XDR Display </li>
+                        <li> 12MP + 12MP | 12MP Front Camera </li>
+                        <li> A15 Bionic Chip Processor </li>
+                        <li> Warranty for 1 Year </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <strong>Rs.44,999 </strong>
+            <div class="items">
+                <div class="clr">Rs.44,99 <span>7% off</span></div>
+                <div id="m">
+                    <p class="o">Free Delivery</p>
+                    <p class="o">Upto Rs. 20,000 off on Exchange</p>
+                    <p class="c">
+                        Bank Offers
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <hr class="h">
+    <div class="item2">
+        <div class="i2">
+            <img src="shopping.webp" alt="iphone">
+        </div>
+
+        <div class="content2">
+            <strong class="Apple2">Apple iPhone 11 (White, 128 GB)</strong>
+            <div class="sizing2">
+                <p id="rating2">4.7</p><span>1,81,870 Ratings & 10,713 Reviwews</span>
+
+                <div class="details2">
+                    <ul>
+                        <li> 128 GB ROM </li>
+                        <li> 15.49 cm (6.1 inch) Super Retina XDR Display </li>
+                        <li> 12MP + 12MP | 12MP Front Camera </li>
+                        <li> A15 Bionic Chip Processor </li>
+                        <li> Warranty for 1 Year </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="price2">
+            <strong>Rs.44,999 </strong>
+            <div class="items2">
+                <div class="clr2">Rs.44,99 <span>7% off</span></div>
+                <div id="m2">
+                    <p class="o2">Free Delivery</p>
+                    <p class="o2">Upto Rs. 20,000 off on Exchange</p>
+                    <p class="c2">
+                        Bank Offers
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <hr class="h">
+
+    <div class="item3">
+        <div class="i3">
+            <img src="shopping.webp" alt="iphone">
+        </div>
+
+        <div class="content3">
+            <strong class="Apple3">Apple iPhone 11 (White, 128 GB)</strong>
+            <div class="sizing3">
+                <p id="rating3">4.7</p><span>1,81,870 Ratings & 10,713 Reviwews</span>
+
+                <div class="details3">
+                    <ul>
+                        <li> 128 GB ROM </li>
+                        <li> 15.49 cm (6.1 inch) Super Retina XDR Display </li>
+                        <li> 12MP + 12MP | 12MP Front Camera </li>
+                        <li> A15 Bionic Chip Processor </li>
+                        <li> Warranty for 1 Year </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price3">
+        <strong>Rs.44,999 </strong>
+        <div class="items3">
+            <div class="clr3">Rs.44,99 <span>7% off</span></div>
+            <div id="m3">
+                <p class="o3">Free Delivery</p>
+                <p class="o3">Upto Rs. 20,000 off on Exchange</p>
+                <p class="c3">
+                    Bank Offers
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="item4">
+        <div class="i4">
+            <img src="shopping.webp" alt="iphone">
+        </div>
+        <div class="content4">
+            <strong class="Apple4">Apple iPhone 11 (White, 128 GB)</strong>
+            <div class="sizing4">
+                <p id="rating4">4.7</p><span>1,81,870 Ratings & 10,713 Reviwews</span>
+
+                <div class="details4">
+                    <ul>
+                        <li> 128 GB ROM </li>
+                        <li> 15.49 cm (6.1 inch) Super Retina XDR Display </li>
+                        <li> 12MP + 12MP | 12MP Front Camera </li>
+                        <li> A15 Bionic Chip Processor </li>
+                        <li> Warranty for 1 Year </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price4">
+        <strong>Rs.44,999 </strong>
+        <div class="items4">
+            <div class="clr4">Rs.44,99 <span>7% off</span></div>
+            <div id="m4">
+                <p class="o4">Free Delivery</p>
+                <p class="o4">Upto Rs. 20,000 off on Exchange</p>
+                <p class="c4">
+                    Bank Offers
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="bgclr">
+
+        <footer class="fot">
+            <table class="tab">
+
+                <th>About </th>
+                <th>Help</th>
+                <th>POLICY</th>
+                <th>SOCIAL</th>
+
+
+                <tr>
+                    <td>Contact Us</td>
+                    <td>Payments</td>
+                    <td>Return Policy</td>
+                    <td>Facebook</td>
+                <tr>
+                    <td>About Us</td>
+                    <td>Shipping</td>
+                    <td>Terms of Use
+                    </td>
+                    <td>
+                        Twitter
+                    </td>
+                </tr>
+                <tr>
+                    <td>careers</td>
+                    <td>Cancellation & Returns</td>
+                    <td>Security
+                    </td>
+                    <td>Youtube</td>
+                </tr>
+                <tr>
+                    <td>Flipkart Stories</td>
+                    <td>FAQ</td>
+                    <td>Privacy
+                    </td>
+                </tr>
+                <tr>
+                    <td>Press</td>
+                    <td>Report Infringement</td>
+                    <td>Sitemap
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flipkart Wholesale</td>
+                    <td>EPR Compliance</td>
+                </tr>
+                <tr>
+                    <td>Corporate Information</td>
+                </tr>
+                </tr>
+
+
+
+
+
+            </table>
+            <div class="mail">
+                <span>Mail Us:</span>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & </p>
+                <p> Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanhalli Village, Bengaluru, 560103,</p>
+                <p>Karnataka, India</p>
+            </div>
+            <div class="last">
+                <span>Registered Office Address:</span>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & </p>
+                <p> Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanhalli Village, Bengaluru, 560103,</p>
+                <p>Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <div class="last ">
+                    <p>Telephone:</p><span id="phone" style="color: blue;">044-45614700</span>
+                </div>
+
+            </div>
+
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>
