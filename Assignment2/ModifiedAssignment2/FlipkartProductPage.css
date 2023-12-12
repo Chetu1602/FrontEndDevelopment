@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
+    *{
+        box-sizing: border-box;
+        margin:0px;
+        padding:0px;
+        font-family: 'Roboto';
+    }
+    .head{
+        background-color: #3F72E9 ;
+        width:100%;
+height:56px;
+    }
+    .contents{
+        display: flex;  
+    }
+    .logo img{
+        width: 88.8px;
+    height: 25px;
+    margin-top: 16px;
+    margin-left: 320px;
+   }
+   #searchbox input{
+    height: 40px;
+    width: 500px;
+    margin: 8px auto 0 12px;
+    align-items: center;
+   }
+   .SearchStyle {
+    padding: 0 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0;
+    outline: 0 none;
+    font-size: 14px;
+    height: 36px;
+    width: 100%;   }
+   #seller,#cart{
+    color:  #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 600;
+    margin:0px 20px;
+    margin-top:17px;
+    
+   }
+   .phoneimg img{
+    width: 204px;
+height: 220px;
+margin-top:24px;
+margin-left:32px ;
+border-bottom: 1px solid #f0f0f0;
+   }
+   .LineStyle{
+    border: 1px solid #F0F0F1;
+   }
+   .container{
+    display: flex;
+    flex-direction: column;
+   }
+   .Items{
+    display: flex;
+   }
+   .ItemName{
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+
+   }
+   .ProductInfo{  
+margin-top: 40px;
+padding-left: 100px;
+}
+   .Ratings{
+    display: flex;
+    margin-top: 8px;
+
+   }
+   .RatingPill{
+    font-family: 'Roboto';
+    line-height: 17px;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: #508C47;
+   }
+   .Star i{
+    margin: 2px 0 0 3px;
+   }
+   .RatingCount{
+    padding-left: 8px;
+color:#878787;
+font-weight: 500;
+
+   }
+   .DeviceFeatures{
+    font-family: Roboto;
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 13px;
+   }
+   .DeviceFeatures li{
+    line-height: 1.5;
+
+   }
+   .PricingInfo{
+   margin-top: 40px;
+   padding-left: 300px;
+   }
+   .SalePrice{
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 700;
+      }
+      .MrpDisount{
+        display: flex;
+      }
+      .Mrp{
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        text-decoration:line-through;
+        color: #878787;
+        padding-top: 5px;
+      }
+      .Discount{
+        color: #388e3c;
+        padding-top: 5px;
+        letter-spacing: -.2px;
+        font-weight: 700;
+        padding-left: 8px;
+        font-size: 13px;
+
+      }
+      .DeliveryInfo,.Exchange{
+        font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 400;
+
+      }
+      .ExchangeInfo{
+        font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+
+      }
+      .OffersInfo{
+        font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+    color:  #508C47;
+    
+      }
+      .PricingInfo{
+        line-height: 1.5;
+      }
+/* footerstyling */
+.footer ,.footerSpacing{
+    background-color:  #1A2335;
+    width: 100%;
+    display: flex;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    }
+
+
+.Section div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.Text{
+    color: #878787;
+    font-size: 12px;
+    font-weight:500;
+    margin-bottom: 9px;
+}
+    .Frame a, .Frame p{
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight:500;
+        line-height: 2;
+
+    }
+    .Frame p{
+        line-height: 1.5;
+    }
+    .footerSpacing{
+        justify-content: center;
+        padding-top: 40px;
+        margin-left: 65px;
+    }
+   
+    .Section{
+    width: 100%;
+    }
+    .PhoneNumber{
+        color: #3D72E8;
+        font-weight: 500;
+        padding-left: 3px;
+    }
+    .MailUs {
+        border-left: 1px solid #454d5e;
+        padding: 0 25px;
+    }
+
+.Box{
+    margin-top: 16px;
+    margin-left: 40px;
+    line-height: 2;
+    margin-bottom: 10px;
+}
+.Checkbox label  {
+    font-weight: 500;
+}
+.Checkbox label:hover{
+    font-weight: 600;
+
+}
