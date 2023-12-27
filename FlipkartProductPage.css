@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto';
+}
+
+.head {
+    background-color: #3F72E9;
+    width: 100%;
+    height: 56px;
+}
+
+.contents {
+    display: flex;
+}
+
+.logo img {
+    width: 88.8px;
+    height: 25px;
+    margin-top: 16px;
+    margin-left: 320px;
+}
+
+#searchbox input {
+    height: 40px;
+    width: 500px;
+    margin: 8px auto 0 12px;
+    align-items: center;
+}
+
+.SearchStyle {
+    padding: 0 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0;
+    outline: 0 none;
+    font-size: 14px;
+    height: 36px;
+    width: 100%;
+}
+
+#seller,
+#cart {
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 20px;
+    margin-top: 17px;
+
+}
+
+.phoneimg img {
+    width: 204px;
+    height: 220px;
+    margin-top: 24px;
+    margin-left: 32px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.LineStyle {
+    border: 1px solid #F0F0F1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.Items {
+    display: flex;
+    cursor: pointer;
+
+}
+
+.ItemName {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+
+}
+.ItemName a{
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+.ItemName a:hover {
+    color: rgba(0, 0, 255, 0.737);
+  }
+  
+
+
+.ProductInfo {
+    margin-top: 40px;
+    padding-left: 100px;
+}
+
+.Ratings {
+    display: flex;
+    margin-top: 8px;
+
+}
+
+.RatingPill {
+    font-family: 'Roboto';
+    line-height: 17px;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: #508C47;
+}
+
+.Star i {
+    margin: 2px 0 0 3px;
+}
+
+.RatingCount {
+    padding-left: 8px;
+    color: #878787;
+    font-weight: 500;
+
+}
+
+.DeviceFeatures {
+    font-family: Roboto;
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 13px;
+}
+
+.DeviceFeatures li {
+    line-height: 1.5;
+
+}
+
+.PricingInfo {
+    margin-top: 40px;
+    padding-left: 300px;
+}
+
+.SalePrice {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.MrpDisount {
+    display: flex;
+}
+
+.Mrp {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    text-decoration: line-through;
+    color: #878787;
+    padding-top: 5px;
+}
+
+.Discount {
+    color: #388e3c;
+    padding-top: 5px;
+    letter-spacing: -.2px;
+    font-weight: 700;
+    padding-left: 8px;
+    font-size: 13px;
+
+}
+
+.DeliveryInfo,
+.Exchange {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.ExchangeInfo {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+.OffersInfo {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+    color: #508C47;
+
+}
+
+.PricingInfo {
+    line-height: 1.5;
+}
+
+/* footerstyling */
+.footer,
+.footerSpacing {
+    background-color: #1A2335;
+    width: 100%;
+    display: flex;
+    padding-bottom: 30px;
+    padding-right: 30px;
+}
+
+
+.Section div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.Text {
+    color: #878787;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.Frame a,
+.Frame p {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2;
+
+}
+
+.Frame p {
+    line-height: 1.5;
+}
+
+.footerSpacing {
+    justify-content: center;
+    padding-top: 40px;
+    margin-left: 65px;
+}
+
+.Section {
+    width: 100%;
+}
+
+.PhoneNumber {
+    color: #3D72E8;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+.MailUs {
+    border-left: 1px solid #454d5e;
+    padding: 0 25px;
+}
+
+.Box {
+    margin-top: 16px;
+    margin-left: 40px;
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
+.Checkbox label {
+    font-weight: 500;
+}
+
+.Checkbox :hover {
+    font-weight: 800;
+
+
+}
+/* //bottom */
+.bottomborder{
+    border: 0.5px solid #454d5e;
+    display: flex;
+    flex-direction: column;
+}
+.bottom{
+    
+    background-color: #1A2335;
+    color: white;
+    padding: 25px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.bottomcontent a{
+    color: #fff;
+    margin-left: 8px;
+    text-decoration: none;
+}
+.bottomcontent h6{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* buttonstyling */
+.check-boxes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    gap: 4px;
+  }
+  
+  #addToCartCheckbox,
+  #addToCompareCheckbox {
+    margin-right: 8px;
+  }
+  
+  .addToCompare {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+/* Compare button  */
+
+.compare-btn {
+    display: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 28px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    height: 40px;
+    width: 144px;
+    background-color: #2874f0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .compare-btn.show {
+    display: block;
+  }
+  
+  /* Show .product-cards on hover */
+  .product-cards {
+    display: flex;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: row;
+    position: fixed;
+    padding-bottom: 40px;
+    right: 20px;
+    bottom: 19px;
+    z-index: 1;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 400;
+    transition: opacity 1s ease-in-out, max-height 0.3s ease-in-out;
+  }
+  
+  /* Show .product-cards on hover */
+  /* .compare-btn:hover + .product-cards {
+    opacity: 1;
+    border: 1px solid rgba(228, 227, 227, 0.603);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+    transition-delay: 0.8s;
+  } */
+  
+  /* Hide .product-cards after 3 seconds */
+  .product-cards:hover {
+    transition-delay: 3s;
+  }
+  
+  .product-card {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-cards img {
+    height: 82px;
+    padding-inline: 40px;
+    padding-bottom: 8px;
+  }
