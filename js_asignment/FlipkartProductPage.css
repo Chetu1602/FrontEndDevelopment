@@ -302,89 +302,78 @@
 }
 
 
-/* buttonstyling */
-.check-boxes {
-    display: flex;
-    flex-direction: column;
-    margin-top: 12px;
-    gap: 4px;
-  }
-  
-  #addToCartCheckbox,
-  #addToCompareCheckbox {
-    margin-right: 8px;
-  }
-  
-  .addToCompare {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-  }
-/* Compare button  */
 
-.compare-btn {
-    display: none;
+/* comparebox */
+
+.comparebox {
+    z-index: 3;
     font-size: 14px;
-    border: none;
     border-radius: 2px;
     color: #fff;
     position: fixed;
-    z-index: 2;
     bottom: 20px;
-    right: 28px;
-    margin-right: 20px;
+    right: 22px;
     cursor: pointer;
     font-weight: 500;
     height: 40px;
-    width: 144px;
+    width: 127px;
     background-color: #2874f0;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .compare-btn.show {
-    display: block;
-  }
-  
-  /* Show .product-cards on hover */
-  .product-cards {
-    display: flex;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    flex-direction: row;
+}
+
+
+.text {
+    padding-left: 20px;
+    padding-top: 11px;
+    font-weight: 600;
+}
+
+.number {
+    margin-left: 9px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .2);
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
+
+.widget {
+    z-index: 2;
+
     position: fixed;
-    padding-bottom: 40px;
-    right: 20px;
-    bottom: 19px;
-    z-index: 1;
-    background-color: white;
-    font-size: 16px;
-    font-weight: 400;
-    transition: opacity 1s ease-in-out, max-height 0.3s ease-in-out;
-  }
-  
-  /* Show .product-cards on hover */
-  /* .compare-btn:hover + .product-cards {
-    opacity: 1;
-    border: 1px solid rgba(228, 227, 227, 0.603);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    max-height: 500px;
-    transition-delay: 0.8s;
-  } */
-  
-  /* Hide .product-cards after 3 seconds */
-  .product-cards:hover {
-    transition-delay: 3s;
-  }
-  
-  .product-card {
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .product-cards img {
-    height: 82px;
-    padding-inline: 40px;
-    padding-bottom: 8px;
-  }
+    bottom: 10px;
+    right: 8px;
+    background: whitesmoke;
+    border: 2px solid wheat;
+    height: 245px;
+    width: 157px;
+    padding:5px;
+    transition: transform 1s ease;
+    transform: scale(1);
+
+    visibility: hidden;
+}
+
+.comparebox:hover + .widget {
+    visibility: visible;
+    z-index: 2;
+
+    
+}
+
+.image img {
+    width: 120px;
+    height: 150px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.title {
+    margin: 5px;
+    font-size: 10px;
+    color: #1A2335;
+    overflow: hidden;
+}
+.container,#footer{
+z-index: 1;
+}
