@@ -1,27 +1,24 @@
 const formattedData = [];
 let selectedData = [];
+let comparecounter = 0;
 
 //creating div using functions
 function createDiv() {
   // Create a new div element
   return document.createElement("div");
 }
+//creating some random number to the add to cart id so that for each loop we will get different id .
+function getRandomNumber() {
+  return Math.floor(Math.random() * 10000);
+}
+
 // creating a div element of class 'container' which is a child of body
 const containerdiv = createDiv();
 containerdiv.classList.add('container');
 document.body.appendChild(containerdiv);
-//adding functionality for Add to compare
-let compareCount = parseInt(localStorage.getItem("compareCount")) || 0;
 
-// Function to update the compare count 
-const updateCompareCount = () => {
-  if (compareCount >= 0) {
-    localStorage.setItem("compareCount", compareCount);
-    compareBtn.textContent = `COMPARE (${compareCount})`;
-  } else {
-    compareCount = 0;
-  }
-};
+
+
 // fetch data from productJSON
 //for left hand side img
 productJSON1.forEach(product => {
@@ -30,6 +27,8 @@ productJSON1.forEach(product => {
   const imgheight = product.image.height;
   const imgalt = product.image.alt;
   const title = product.title;
+  formattedData.push({ title, imgurl });
+
 
   // creating element div with class Items as a child of containerdiv
   var itemsdiv = createDiv();
@@ -183,76 +182,127 @@ productJSON1.forEach(product => {
 
   pricingInfodiv.appendChild(offersInfodiv);
 
+  // add to cart
+  const boxdiv = createDiv();
+  boxdiv.classList.add('Box');
+  phoneimgdiv.appendChild(boxdiv);
+  //crerate a elements for Add to cart 
+  const checkboxdiv1 = createDiv();
+  checkboxdiv1.classList.add('Checkbox');
+  boxdiv.appendChild(checkboxdiv1);
+  //create checkbox
+  const input1 = document.createElement('input');
+  input1.type = 'checkbox';
+  input1.id = `AddToCart_${getRandomNumber()}`;
+  checkboxdiv1.appendChild(input1);
+  // create lable Add to cart
+  const label1 = document.createElement('label');
+  label1.for = "AddToCart";
+  label1.textContent = 'Add To Cart';
+  checkboxdiv1.appendChild(label1);
 
-  //comapre
+  // ----------------------------------------
+  //add to compare 
 
-  // creating div with class box which is child of phoneimgdiv
-  const CheckBoxes = createDiv();
-  CheckBoxes.classList.add("check-boxes");
-  itemsdiv.appendChild(CheckBoxes);
+  //create a elements for Add to cart 
+  const checkboxdiv2 = createDiv();
+  checkboxdiv2.classList.add('Checkbox');
+  boxdiv.appendChild(checkboxdiv2);
+  //create checkbox
+  const input2 = document.createElement('input');
+  input2.type = 'checkbox';
+  input2.classList.add("compare-checkbox");
+  input2.id = `AddToCompare_${getRandomNumber()}`;
+  input2.addEventListener('change', updateCount);
+  checkboxdiv2.appendChild(input2);
+  // create lable Add to compare
+  const label2 = document.createElement('label');
+  label2.htmlFor = `AddToCompare`;
+  label2.textContent = ' Add To Compare';
+  checkboxdiv2.appendChild(label2);
 
-  const addToCart = createDiv();
-  addToCart.classList.add("addToCart");
-  CheckBoxes.appendChild(addToCart);
 
-  const addToCompare = createDiv();
-  addToCompare.classList.add("addToCompare");
-  CheckBoxes.appendChild(addToCompare);
-  // Create checkbox for "Add to Cart"
-  const addToCartCheckbox = document.createElement("input");
-  addToCartCheckbox.type = "checkbox";
-  addToCartCheckbox.id = "addToCartCheckbox";
-  addToCart.appendChild(addToCartCheckbox);
 
-  // Create label for "Add to Cart" checkbox
-  const addToCartLabel = document.createElement("label");
-  addToCartLabel.textContent = "Add to Cart";
-  addToCartLabel.htmlFor = "addToCartCheckbox";
-  addToCart.appendChild(addToCartLabel);
 
-  // Create checkbox for "Add to Compare"
-  const addToCompareCheckbox = document.createElement("input");
-  addToCompareCheckbox.type = "checkbox";
-  addToCompareCheckbox.classList.add("compare-checkbox");
 
-  addToCompareCheckbox.id = `addToCompareCheckbox_${compareCount}`;
-  addToCompare.appendChild(addToCompareCheckbox);
-
-  // Create label for "Add to Compare" checkbox
-  const addToCompareLabel = document.createElement("label");
-  addToCompareLabel.textContent = "Add to Compare";
-  addToCompareLabel.htmlFor = `addToCompareCheckbox_${compareCount}`;
-  addToCompare.appendChild(addToCompareLabel);
-  // Add event listener for the "Add to Compare" checkbox
-  addToCompareCheckbox.addEventListener("change", () => {
-    if (addToCompareCheckbox.checked) {
-      compareCount++;
-    } else {
-      compareCount = Math.max(0, compareCount - 1);
-    }
-    updateCompareCount();
-  });
 });
 
-// COMPARE button
-const compareBtn = document.createElement("button");
-compareBtn.classList.add("compare-btn");
-containerdiv.appendChild(compareBtn);
+//adding function to checkbox
+function updateCount() {
+  var checkBox = this;
+  var checkBoxId = checkBox.id;
+  if (checkBox.checked) {
+    // Increment counter and update compare box
 
-compareBtn.textContent = `COMPARE ${0}`;
+    comparecounter++;
+    updateCompareBox();
 
-// product cards
+  } else {
+    // Decrement counter and update compare box
+
+    comparecounter--;
+    updateCompareBox();
+
+  }
+}
+// Function to update the compare box based on the counter
+function updateCompareBox() {
+  const compareboxdiv = document.querySelector('.comparebox');
+  if (comparecounter > 0) {
+    // Enable compare box and update the number
+    if (!compareboxdiv) {
+      // if Compare box doesn't exist: create it
+      createCompareBox();
+    } else {
+      // Compare box exists: update the number
+
+      updateCompareNumber();
+    }
+  } else {
+    // Disable compare box
+    if (compareboxdiv) {
+      // Compare box exists: remove it
+
+      compareboxdiv.remove();
+    }
+  }
+}
+
+//functiopn to create the compare box when the items are checked to compare
+function createCompareBox() {
+  const compareboxdiv = createDiv();
+  compareboxdiv.classList.add('comparebox');
+  document.body.appendChild(compareboxdiv);
+
+  // compare text
+  const textdiv = createDiv();
+  textdiv.classList.add('text');
+  textdiv.textContent = 'Compare';
+  compareboxdiv.appendChild(textdiv);
+
+  // number
+  const numberspan = document.createElement('span');
+  numberspan.classList.add('number');
+  numberspan.textContent = comparecounter;
+  textdiv.appendChild(numberspan);
+}
+// Function to update the compare number
+function updateCompareNumber() {
+  const numberspan = document.querySelector(' .number');
+  if (numberspan) {
+    numberspan.textContent = comparecounter;
+  }
+}
+// -----------------------------------------------------
+
+//product cards
 const productCardsDiv = createDiv();
 productCardsDiv.classList.add("product-cards");
 
 containerdiv.appendChild(productCardsDiv);
 
-// const showCompareButton = function () {
-//   [product.title, product.image.url];
-// };
 
 const checkboxes = document.querySelectorAll(".compare-checkbox");
-
 // handle checkbox state change
 function handleCheckboxChange(event, index) {
   const checkbox = event.target;
@@ -265,35 +315,41 @@ function handleCheckboxChange(event, index) {
 
   updateCompareButton();
 }
+
 // update the compare button state
 function updateCompareButton() {
   if (selectedData.length > 0) {
-    compareBtn.classList.add("show");
+    compareboxdiv.classList.add("show");
     productJSON1.forEach((product) => {
-      // Create a div element for each product
-      const productCardDiv = createDiv();
-      productCardDiv.classList.add("product-card");
+      const widgetdiv = createDiv();
+      widgetdiv.classList.add("widget");
+      document.body.appendChild(widgetdiv);
+      //create a image div 
+      const imagediv = createDiv();
+      imagediv.classList.add("image");
+      widgetdiv.appendChild(imagediv);
+      //create a img tag 
 
-      // Add product details to the card
-      const title = document.createElement("h6");
-      const cardImg = document.createElement("img");
+      const imgofwidget = document.createElement('img');
+      var iphone = product.imgurl;
+      imgofwidget.src = iphone;
+      imgofwidget.alt = 'Loading';
+      imagediv.appendChild(imgofwidget);
+      //create a title 
+      const titlediv = createDiv();
+      titlediv.classList.add("title");
+      var titletext = product.title;
+      titlediv.textContent = titletext;
+      imagediv.appendChild(titlediv);
 
-      title.textContent = product.title;
-      productCardDiv.appendChild(title);
-
-      cardImg.src = product.image.url;
-
-      productCardDiv.appendChild(cardImg);
-
-      productCardsDiv.appendChild(productCardDiv);
+      
     });
   } else {
-    compareBtn.classList.remove("show");
+    compareboxdiv.classList.remove("show");
   }
 
-  compareBtn.textContent = `COMPARE ${selectedData.length}`;
+  compareboxdiv.textContent = `COMPARE ${selectedData.length}`;
 }
-
 // Add event listener to each checkbox
 checkboxes.forEach((checkbox, index) => {
   checkbox.addEventListener("change", (e) => handleCheckboxChange(e, index));
@@ -306,30 +362,36 @@ function handleCheckboxChange(event, index) {
   if (checkbox.checked) {
     selectedData.push({ ...formattedData[index], index });
     // Create a div element for each product card
-    const productCardDiv = createDiv();
-    productCardDiv.classList.add("product-card");
-    productCardDiv.dataset.index = index;
+    const widgetdiv = createDiv();
+      widgetdiv.classList.add("widget");
+      document.body.appendChild(widgetdiv);
+    widgetdiv.dataset.index = index;
+    //create a image div 
+    const imagediv = createDiv();
+    imagediv.classList.add("image");
+    imagediv.dataset.index = index;
+    widgetdiv.appendChild(imagediv);
+    //create a img tag 
 
-    // product card details
-    const title = document.createElement("h6");
-    const cardImg = document.createElement("img");
+    const imgofwidget = document.createElement('img');
+    imgofwidget.src = formattedData[index].imgurl;
+    imgofwidget.alt = 'Loading';
+    imagediv.appendChild(imgofwidget);
+    //create a title 
+    const titlediv = createDiv();
+    titlediv.classList.add("title");
+    titlediv.textContent = formattedData[index].title;
+    imagediv.appendChild(titlediv);
 
-    title.textContent = formattedData[index].title;
-    title.style.fontWeight = 400;
-    cardImg.src = formattedData[index].imageUrl;
-
-    productCardDiv.appendChild(cardImg);
-    productCardDiv.appendChild(title);
-
-    productCardsDiv.appendChild(productCardDiv);
+    
   } else {
     selectedData = selectedData.filter((data) => data.index !== index);
     // Remove the product card from the main container
     const cardToRemove = document.querySelector(
-      `.product-card[data-index="${index}"]`
+      `.widget[data-index="${index}"]`
     );
     if (cardToRemove) {
-      productCardsDiv.removeChild(cardToRemove);
+      widgetdiv.removeChild(cardToRemove);
     }
   }
 
@@ -339,18 +401,11 @@ function handleCheckboxChange(event, index) {
 // Function to update the compare button state
 function updateCompareButton() {
   if (selectedData.length > 0) {
-    compareBtn.classList.add("show");
+    compareboxdiv.classList.add("show");
   } else {
-    compareBtn.classList.remove("show");
+    compareboxdiv.classList.remove("show");
   }
 
-  compareBtn.textContent = `COMPARE ${selectedData.length}`;
+  compareboxdiv.textContent = `COMPARE ${selectedData.length}`;
 }
-
-
-
-
-
-
-
 
